@@ -223,6 +223,13 @@ MindGarden/
 
 ---
 
+Current Status
+
+- Implemented Note class using Object-Oriented Programming
+- Refactored application from String arrays to Note objects
+- Added menu-driven note creation, display, and search functionality
+- Established the foundation for future features such as file persistence, ArrayList support, and AI integration
+
 ## License
 
 This project is currently under development.
