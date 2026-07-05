@@ -3,36 +3,48 @@ import java.util.Scanner;
 class Main
 {
     static Scanner sc = new Scanner(System.in);
-    public static String[] addnotes()
+    public static Note[] addnotes()
     {
       System.out.print("Enter Number of Notes :");
       int n = sc.nextInt();
-         sc.nextLine();
+      sc.nextLine();
     
-       String[] MGnotes = new String[n];
+       Note[] MGnotes = new Note[n];
     
        for(int i = 0;i<MGnotes.length;i++)
       {
-          System.out.println("Enter Note "+(i+1)+ " :");
-          MGnotes[i] = sc.nextLine();
+
+          System.out.print("Enter Title: ");
+          String title = sc.nextLine();
+
+          System.out.print("Enter Category: ");
+          String category = sc.nextLine();
+
+          System.out.print("Enter Content: ");
+          String content = sc.nextLine();
+
+          System.out.print("Enter Created At: ");
+          String createdAt = sc.nextLine();
+
+          MGnotes[i] = new Note(title,category,createdAt,content);
       }    
       return MGnotes;
        
     }
 
-    public static void display(String[] notes)
+    public static void display(Note[] notes)
     {
         for(int i=0;i<notes.length;i++)
       {
         if(notes[i]!=null)
         {
-          System.out.println(+(i+1)+"."+notes[i]);
+          notes[i].displayNote();
         }
       }
     }
     
     
-    public static void searchnotes(String[] notes)
+    public static void searchnotes(Note[] notes)
     {
         int found = 0;
         System.out.print("Enter The Word to Search:");
@@ -42,11 +54,11 @@ class Main
         {
              if(notes[i] != null)
            {
-              String presentWord = notes[i].toLowerCase();
+              String presentWord = notes[i].getTitle().toLowerCase();
                 if(presentWord.contains(lower))
              {
                  found++;
-                   System.out.println((i+1)+". "+notes[i]);
+                  notes[i].displayNote();
               }
            } 
         } 
@@ -62,14 +74,13 @@ public static void main(String[] args)
 
         int choice;
         int i = 1;
-        String[] notes = new String[5];
+        Note[] notes = new Note[10];
         while(i==1)
         {
           System.out.println("===== Welcome to MindGarden =====");
           System.out.println("1. Add Notes");
           System.out.println("2. Search Notes");
           System.out.println("3. Display");
-          System.out.println("4.Exit")
           System.out.println("Enter Your Choice : ");
           choice = sc.nextInt();
           sc.nextLine();
