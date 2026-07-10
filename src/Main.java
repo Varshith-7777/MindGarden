@@ -1,19 +1,12 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 class Main
 {
     static Scanner sc = new Scanner(System.in);
-    public static Note[] addnotes()
+    public static void addnotes(ArrayList<Note> notes)
     {
-      System.out.print("Enter Number of Notes :");
-      int n = sc.nextInt();
-      sc.nextLine();
-    
-       Note[] MGnotes = new Note[n];
-    
-       for(int i = 0;i<MGnotes.length;i++)
-      {
-
           System.out.print("Enter Title: ");
           String title = sc.nextLine();
 
@@ -25,40 +18,36 @@ class Main
 
           System.out.print("Enter Created At: ");
           String createdAt = sc.nextLine();
-
-          MGnotes[i] = new Note(title,category,createdAt,content);
-      }    
-      return MGnotes;
-       
+          notes.add(new Note(title,category,content,createdAt));
+          System.out.println("Note Added Succesfully");
     }
 
-    public static void display(Note[] notes)
+    public static void display(ArrayList<Note> notes)
     {
-        for(int i=0;i<notes.length;i++)
+        for(int i=0;i<notes.size();i++)
       {
-        if(notes[i]!=null)
+        if(notes.get(i)!=null)
         {
-          notes[i].displayNote();
+          notes.get(i).displayNote();
         }
       }
     }
     
-    
-    public static void searchnotes(Note[] notes)
+        public static void searchnotes(ArrayList<Note> notes)
     {
         int found = 0;
         System.out.print("Enter The Word to Search:");
         String word = sc.nextLine();
         String lower = word.toLowerCase();
-        for(int i = 0; i<notes.length;i++)
+        for(int i = 0; i<notes.size();i++)
         {
-             if(notes[i] != null)
+             if(notes.get(i) != null)
            {
-              String presentWord = notes[i].getTitle().toLowerCase();
+              String presentWord = notes.get(i).getTitle().toLowerCase();
                 if(presentWord.contains(lower))
              {
                  found++;
-                  notes[i].displayNote();
+                  notes.get(i).displayNote();
               }
            } 
         } 
@@ -74,7 +63,7 @@ public static void main(String[] args)
 
         int choice;
         int i = 1;
-        Note[] notes = new Note[10];
+        ArrayList<Note> notes = new ArrayList<>();     
         while(i==1)
         {
           System.out.println("===== Welcome to MindGarden =====");
@@ -88,14 +77,14 @@ public static void main(String[] args)
           switch(choice)
          {
              case 1 :
-                        notes = addnotes();
+                        addnotes(notes);
                         break;
             
             case 2 : 
                         searchnotes(notes);
                         break;
             
-            case 3 : 
+            case 3 :
                         display(notes);
                         break;
             case 4 :   

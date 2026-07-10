@@ -6,7 +6,7 @@ public class Note
           private String content;
           private boolean completed;
 
-       public Note(String title, String category,String createdAt,String content)
+       public Note(String title, String category,String content,String createdAt)
         {
             this.title = title;
             this.category = category;
