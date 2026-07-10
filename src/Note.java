@@ -1,6 +1,6 @@
 public class Note
 {
-        private String title;
+          private String title;
           private String category;
           private String createdAt;
           private String content;
@@ -57,4 +57,29 @@ public class Note
     {
         completed = true;
     }
+
+    public void setTitle(String title)
+  {
+     this.title = title;
+
+  }
+   public void setCategory(String category)
+  {
+     this.category = category;
+
+  }
+  public void setcreatedAt(String createdAt)
+  {
+     this.createdAt = createdAt;
+
+  }
+   public void setcontent(String content)
+  {
+     this.content = content;
+
+  }
+
+
+
 }
+
