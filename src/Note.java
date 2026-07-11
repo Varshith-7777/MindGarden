@@ -52,12 +52,6 @@ public class Note
     {
         return completed;
     }
-
-    public void markAsCompleted()
-    {
-        completed = true;
-    }
-
     public void setTitle(String title)
   {
      this.title = title;
@@ -78,8 +72,12 @@ public class Note
      this.content = content;
 
   }
+  public void setCompleted(boolean completed)
+  {
+     this.completed = completed;
+
+  }
 
 
 
 }
-
