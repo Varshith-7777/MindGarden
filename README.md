@@ -111,33 +111,44 @@ This encourages deliberate practice instead of passive consumption.
 
 ## Technology Roadmap
 
-MindGarden will evolve alongside my software engineering learning journey.
+## 🚀 Technology Roadmap
 
-### Phase 1
+MindGarden is a personal knowledge management application built as a long-term learning project. Each phase introduces new technologies and software engineering concepts while progressively transforming the application into a full-stack AI-powered platform.
+
+MindGarden will evolve alongside my software engineering learning journey, with each phase introducing new technologies and expanding the application's capabilities.
+
+### Phase 1 — Java Foundations
 - Java Fundamentals
 - Arrays
 - Strings
-- Object-Oriented Programming
+- Object-Oriented Programming (OOP)
+- CRUD Operations
+- Git & GitHub
 
-### Phase 2
+### Phase 2 — Intermediate Java
 - Java Collections Framework
 - Exception Handling
 - File Handling
 
-### Phase 3
-- SQL Database Integration
+### Phase 3 — Database Integration
+- SQL
+- JDBC
+- MySQL Database Integration
 
-### Phase 4
+### Phase 4 — Backend Development
 - Node.js
 - Express.js
 - REST API Development
 
-### Phase 5
-- React.js Frontend
+### Phase 5 — Frontend Development
+- React.js
+- Responsive User Interface
+- API Integration
 
-### Phase 6
-- AI Integration
+### Phase 6 — AI Integration
 - Intelligent Learning Assistant
+- AI-Powered Note Summarization
+- Smart Recommendations
 
 ---
 
@@ -223,12 +234,31 @@ MindGarden/
 
 ---
 
-Current Status
+## Vision
 
-- Implemented Note class using Object-Oriented Programming
-- Refactored application from String arrays to Note objects
-- Added menu-driven note creation, display, and search functionality
-- Established the foundation for future features such as file persistence, ArrayList support, and AI integration
+The goal of MindGarden is not only to become a feature-rich productivity application but also to document my complete software engineering journey.
+
+By continuously improving this project, I aim to gain practical experience in:
+
+- Java Development
+- Software Engineering
+- Database Design
+- Backend Development
+- Frontend Development
+- Artificial Intelligence
+- Version Control with Git
+
+Every commit represents a step forward in both the application and my growth as a developer.
+
+---
+
+## Current Status
+
+**Phase 1:** Completed
+
+**Current Focus:** Intermediate Java (Collections, Exception Handling & File Handling)
+
+**Next Milestone:** Persistent Note Storage using File Handling.
 
 ## License
 
