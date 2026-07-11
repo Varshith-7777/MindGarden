@@ -109,48 +109,209 @@ This encourages deliberate practice instead of passive consumption.
 
 ---
 
-## Technology Roadmap
+# Development Roadmap
 
-## 🚀 Technology Roadmap
+MindGarden is being built incrementally alongside my software engineering journey. Each phase introduces new technologies while expanding the application's capabilities. Every concept I learn is immediately applied to the project, allowing it to evolve from a simple Java console application into a modern AI-powered learning platform.
 
-MindGarden is a personal knowledge management application built as a long-term learning project. Each phase introduces new technologies and software engineering concepts while progressively transforming the application into a full-stack AI-powered platform.
+---
 
-MindGarden will evolve alongside my software engineering learning journey, with each phase introducing new technologies and expanding the application's capabilities.
+## Phase 1 — Java Foundations
 
-### Phase 1 — Java Foundations
+### Goal
+
+Build the first working version of MindGarden while mastering Java fundamentals.
+
+### Technologies
+
 - Java Fundamentals
 - Arrays
 - Strings
 - Object-Oriented Programming (OOP)
-- CRUD Operations
+- ArrayList
 - Git & GitHub
 
-### Phase 2 — Intermediate Java
+### Features
+
+- Add Notes
+- Display Notes
+- Search Notes
+- Edit Notes
+- Delete Notes
+- Mark Notes as Completed
+
+### Learning Outcomes
+
+- Java syntax and programming fundamentals
+- Classes and Objects
+- Constructors
+- Encapsulation
+- Collections using ArrayList
+- Basic software design
+- Version control using Git and GitHub
+
+---
+
+## Phase 2 — Intermediate Java
+
+### Goal
+
+Transform MindGarden into a reliable desktop application capable of storing data permanently and handling user errors gracefully.
+
+### Technologies
+
 - Java Collections Framework
 - Exception Handling
 - File Handling
 
-### Phase 3 — Database Integration
+### Features
+
+- Persistent note storage
+- Automatic loading of saved notes
+- Exception handling for invalid user input
+- Improved console interface
+
+### Learning Outcomes
+
+- Exception handling using try-catch
+- File reading and writing
+- Data persistence
+- Writing maintainable Java applications
+
+---
+
+## Phase 3 — Database Integration
+
+### Goal
+
+Replace local file storage with a relational database to manage data more efficiently.
+
+### Technologies
+
 - SQL
 - JDBC
-- MySQL Database Integration
+- MySQL
 
-### Phase 4 — Backend Development
+### Features
+
+- Database-backed note storage
+- Faster searching
+- Structured data management
+- Improved scalability
+
+### Learning Outcomes
+
+- Database design
+- SQL queries
+- JDBC connectivity
+- Data modeling
+
+---
+
+## Phase 4 — Backend Development
+
+### Goal
+
+Convert MindGarden into a client-server application that can be accessed from multiple devices.
+
+### Technologies
+
 - Node.js
 - Express.js
 - REST API Development
 
-### Phase 5 — Frontend Development
-- React.js
-- Responsive User Interface
-- API Integration
+### Features
 
-### Phase 6 — AI Integration
-- Intelligent Learning Assistant
-- AI-Powered Note Summarization
-- Smart Recommendations
+- User authentication
+- Cloud-based note storage
+- RESTful APIs
+- User account management
+
+### Learning Outcomes
+
+- Backend architecture
+- REST API design
+- Authentication and authorization
+- Server-side development
 
 ---
+
+## Phase 5 — Frontend Development
+
+### Goal
+
+Develop a modern web interface that communicates with the backend through APIs.
+
+### Technologies
+
+- React.js
+- HTML
+- CSS
+- JavaScript
+
+### Features
+
+- Interactive dashboard
+- Responsive user interface
+- API integration
+- Real-time updates
+
+### Learning Outcomes
+
+- Component-based architecture
+- State management
+- Frontend engineering
+- User interface design
+
+---
+
+## Phase 6 — Artificial Intelligence
+
+### Goal
+
+Transform MindGarden into an intelligent learning assistant that helps users understand, revise, and retain knowledge.
+
+### Technologies
+
+- Large Language Models (LLMs)
+- AI APIs
+- Embeddings
+- Vector Search
+
+### Features
+
+- AI-powered note summarization
+- Flashcard generation
+- Quiz generation
+- Intelligent knowledge connections
+- Personalized learning recommendations
+- Revision planning assistance
+
+### Learning Outcomes
+
+- AI integration
+- Prompt engineering
+- Retrieval-Augmented Generation (RAG)
+- Building AI-powered applications
+
+---
+
+## Long-Term Vision
+
+By completing every phase, MindGarden will evolve from a Java console application into a complete AI-powered learning operating system.
+
+Throughout this journey, I aim to develop practical experience in:
+
+- Java Development
+- Object-Oriented Programming
+- Database Design
+- Backend Development
+- Frontend Development
+- Artificial Intelligence
+- Software Architecture
+- Version Control with Git
+- Full-Stack Development
+
+Every phase builds upon the previous one, ensuring that both the application and my software engineering skills grow together. Every commit represents meaningful progress in the evolution of MindGarden.
 
 ## Development Philosophy
 
@@ -234,23 +395,7 @@ MindGarden/
 
 ---
 
-## Vision
 
-The goal of MindGarden is not only to become a feature-rich productivity application but also to document my complete software engineering journey.
-
-By continuously improving this project, I aim to gain practical experience in:
-
-- Java Development
-- Software Engineering
-- Database Design
-- Backend Development
-- Frontend Development
-- Artificial Intelligence
-- Version Control with Git
-
-Every commit represents a step forward in both the application and my growth as a developer.
-
----
 
 ## Current Status
 
