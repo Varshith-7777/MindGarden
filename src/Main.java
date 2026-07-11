@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 import java.util.ArrayList;
 
 
@@ -18,6 +19,7 @@ class Main
 
           System.out.print("Enter Created At: ");
           String createdAt = sc.nextLine();
+
           notes.add(new Note(title,category,content,createdAt));
           System.out.println("Note Added Succesfully");
     }
@@ -47,6 +49,31 @@ class Main
         }
     }
 
+    public static void deleteNote(ArrayList<Note> notes)
+    {
+
+        System.out.println("Enter The Note Number to Delete");
+        int noteNum = sc.nextInt();
+        int index = noteNum-1;
+        if(notes.size()>=0)
+        { 
+        notes.remove(index);
+        System.out.println("Note Removed Succesfully");
+        }
+    }
+
+    public static void noteCompeleted(ArrayList<Note> notes)
+    {
+        System.out.println("Enter The Note Number to Mark Completed");
+        int noteNum = sc.nextInt();
+        int index = noteNum-1;
+        if(notes.size()>=0)
+        { 
+        notes.get(index).setCompleted(true);
+        System.out.println("Note Marked  Succesfully");
+        }
+
+    } 
 
 
     public static void display(ArrayList<Note> notes)
@@ -62,6 +89,87 @@ class Main
     
         public static void searchnotes(ArrayList<Note> notes)
     {
+        int found = 0;
+        System.out.print("Enter The Word to Search:");
+        String word = sc.nextLine();
+        String lower = word.toLowerCase();
+        for(int i = 0; i<notes.size();i++)
+        {
+             if(notes.get(i) != null)
+           {
+              String presentWord = notes.get(i).getTitle().toLowerCase();
+                if(presentWord.contains(lower))
+             {
+                 found++;
+                  notes.get(i).displayNote();
+              }
+           } 
+        } 
+        if(found==0)
+        {
+            System.out.print("Word Not Found");            
+
+        }
+    }
+    
+public static void main(String[] args)
+    {
+
+        int choice;
+        int i = 1;
+        ArrayList<Note> notes = new ArrayList<>();     
+        while(i==1)
+        {
+          System.out.println("===== Welcome to MindGarden =====");
+          System.out.println("1. Add Notes");
+          System.out.println("2. Search Notes");
+          System.out.println("3. Edit Note");
+          System.out.println("4. Delete Note");
+          System.out.println("5. Mark Completed");
+          System.out.println("6. Display");
+          System.out.println("Enter Your Choice : ");
+          choice = sc.nextInt();
+          sc.nextLine();
+        
+          switch(choice)
+         {
+             case 1 :
+                        addnotes(notes);
+                        break;
+            
+            case 2 : 
+                        searchnotes(notes);
+                        break;
+            
+            case 3 : 
+                        editnotes(notes);
+                        break; 
+                        
+            case 4 : 
+                        deleteNote(notes);
+                        break;
+
+            case 5 :
+                        noteCompeleted(notes);
+                        break;
+            
+            case 6 :
+                        display(notes);
+                        break;
+            case 7 :   
+                        System.out.println("Thank you for using MindGarden");
+                        return;
+            
+            default :
+                        System.out.println("Invalid Choice!! Try Again");
+                        break;
+         }
+
+    
+        }
+        sc.close();
+    }
+}
         int found = 0;
         System.out.print("Enter The Word to Search:");
         String word = sc.nextLine();
