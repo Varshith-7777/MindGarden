@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.*;
 
 import java.util.ArrayList;
 
@@ -111,13 +112,75 @@ class Main
 
         }
     }
-    
+
+
+
+    public static void saveNotes(ArrayList<Note> notes)
+        {
+           try
+           {
+           FileWriter file = new FileWriter("Notes.txt");
+         
+           for(int i=0;i<notes.size();i++)
+            {
+              Note note = notes.get(i);
+              String line = note.getTitle() + "|"+ note.getCategory()+"|"+ note.getCreatedAt()+"|"+ note.getContent()+"|"+ note.isCompleted();
+              file.write(line + "\n");
+
+            }
+            file.close();
+             
+           }
+
+           catch(IOException exception)
+           {
+             System.out.println("Error while Creating or saving a file");
+           }
+           
+
+        }
+
+    public static void loadNotes(ArrayList<Note> notes) 
+    {
+        try
+        {
+        FileReader file = new FileReader("Notes.txt");
+        BufferedReader read = new BufferedReader(file);
+        String line ;
+        line = read.readLine();
+        while(line!=null)
+        {
+            String[] data = line.split("\\|");
+            boolean bool = Boolean.parseBoolean(data[4]);
+            Note note = new Note(
+               data[0],
+               data[1],
+               data[2],
+               data[3]
+            );
+            note.setCompleted(bool);
+            notes.add(note);
+            line = read.readLine();
+        }
+        
+        read.close();
+        file.close();
+
+        }
+
+        catch(IOException e)
+        {
+
+            System.out.println("File Not Found");
+        }
+    }
 public static void main(String[] args)
     {
 
         int choice;
         int i = 1;
-        ArrayList<Note> notes = new ArrayList<>();     
+        ArrayList<Note> notes = new ArrayList<>();
+        loadNotes(notes);
         while(i==1)
         {
           System.out.println("===== Welcome to MindGarden =====");
@@ -127,6 +190,7 @@ public static void main(String[] args)
           System.out.println("4. Delete Note");
           System.out.println("5. Mark Completed");
           System.out.println("6. Display");
+          System.out.println("7. Save Notes to a file");
           System.out.println("Enter Your Choice : ");
           choice = sc.nextInt();
           sc.nextLine();
@@ -135,6 +199,7 @@ public static void main(String[] args)
          {
              case 1 :
                         addnotes(notes);
+                        saveNotes(notes);
                         break;
             
             case 2 : 
@@ -143,22 +208,29 @@ public static void main(String[] args)
             
             case 3 : 
                         editnotes(notes);
+                        saveNotes(notes);
                         break; 
                         
             case 4 : 
                         deleteNote(notes);
+                        saveNotes(notes);
                         break;
 
             case 5 :
                         noteCompeleted(notes);
+                        saveNotes(notes);
                         break;
+            
             
             case 6 :
                         display(notes);
                         break;
+
+
             case 7 :   
-                        System.out.println("Thank you for using MindGarden");
-                        return;
+                        saveNotes(notes);
+                        System.out.println("Notes Saved To a File");
+                        break;
             
             default :
                         System.out.println("Invalid Choice!! Try Again");
@@ -170,113 +242,5 @@ public static void main(String[] args)
         sc.close();
     }
 }
-        int found = 0;
-        System.out.print("Enter The Word to Search:");
-        String word = sc.nextLine();
-        String lower = word.toLowerCase();
-        for(int i = 0; i<notes.size();i++)
-        {
-             if(notes.get(i) != null)
-           {
-              String presentWord = notes.get(i).getTitle().toLowerCase();
-                if(presentWord.contains(lower))
-             {
-                 found++;
-                  notes.get(i).displayNote();
-              }
-           } 
-        } 
-        if(found==0)
-        {
-            System.out.print("Word Not Found");            
 
-        }
-    }
-    
-public static void main(String[] args)
-    {
 
-        int choice;
-        int i = 1;
-        ArrayList<Note> notes = new ArrayList<>();     
-        while(i==1)
-        {
-          System.out.println("===== Welcome to MindGarden =====");
-          System.out.println("1. Add Notes");
-          System.out.println("2. Search Notes");
-          System.out.println("3. Edit Note");
-          System.out.println("4. Display");
-          System.out.println("Enter Your Choice : ");
-          choice = sc.nextInt();
-          sc.nextLine();
-        
-          switch(choice)
-         {
-             case 1 :
-                        addnotes(notes);
-                        break;
-            
-            case 2 : 
-                        searchnotes(notes);
-                        break;
-            
-            case 3 : 
-                        editnotes(notes);
-                        break;         
-            
-            case 4 :
-                        display(notes);
-                        break;
-            case 5 :   
-                        System.out.println("Thank you for using MindGarden");
-                        return;
-            
-            default :
-                        System.out.println("Invalid Choice!! Try Again");
-                        break;
-         }
-
-    
-        }
-        sc.close();
-    }
-}
-        int i = 1;
-        ArrayList<Note> notes = new ArrayList<>();     
-        while(i==1)
-        {
-          System.out.println("===== Welcome to MindGarden =====");
-          System.out.println("1. Add Notes");
-          System.out.println("2. Search Notes");
-          System.out.println("3. Display");
-          System.out.println("Enter Your Choice : ");
-          choice = sc.nextInt();
-          sc.nextLine();
-        
-          switch(choice)
-         {
-             case 1 :
-                        addnotes(notes);
-                        break;
-            
-            case 2 : 
-                        searchnotes(notes);
-                        break;
-            
-            case 3 :
-                        display(notes);
-                        break;
-            case 4 :   
-                        System.out.println("Thank you for using MindGarden");
-                        return;
-            
-            default :
-                        System.out.println("Invalid Choice!! Try Again");
-                        break;
-         }
-
-    
-        }
-        sc.close();
-    }
-}
